@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مكتبة Fitch API - الضبط الصوتي البصراوي</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #12121c;
+            color: #f0f0f5;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1e1e2d;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+        h2 { color: #00d2ff; text-align: center; }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label { display: block; margin-bottom: 5px; color: #a0a0b0; }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            background: #2a2a3d;
+            border: 1px solid #44445c;
+            color: #fff;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #00d2ff;
+            color: #12121c;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background: #00a8cc; }
+        .btn-danger {
+            background: #ff4757;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+        .btn-edit {
+            background: #ffa502;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #44445c;
+            padding: 10px;
+            text-align: center;
+        }
+        th { background: #2a2a3d; color: #00d2ff; }
+        .output-box {
+            background: #12121c;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px dashed #00d2ff;
+            margin-top: 15px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>مكتبة Fitch API - اللهجة البصراوية والضبط الصوتي</h2>
+    
+    <div class="form-group">
+        <label>الكلمة باللهجة العراقية (الأصلية):</label>
+        <input type="text" id="iraqiWord" placeholder="مثال: چاي / تُمُرّ">
+    </div>
+    <div class="form-group">
+        <label>البديل الصوتي للذكاء الاصطناعي (Phonetic):</label>
+        <input type="text" id="phoneticWord" placeholder="مثال: chay / to-mor">
+    </div>
+    <button onclick="addWordToDatabase()">إضافة الكلمة للمكتبة</button>
+
+    <hr style="border-color: #44445c; margin: 25px 0;">
+
+    <h3>اختبار تحويل النص عبر مكتبة Fitch IBI</h3>
+    <div class="form-group">
+        <label>أدخل جملة أو بيت شعري بالعامية:</label>
+        <textarea id="inputText" rows="3" placeholder="اكتب هنا.. مثلاً: جيب الخبر وخل نسمع"></textarea>
+    </div>
+    <button onclick="convertText()">معالجة وتصحيح النص</button>
+    
+    <div class="output-box" id="resultOutput">النتيجة المعالجة ستظهر هنا...</div>
+
+    <h3 style="margin-top: 30px;">قائمة الكلمات المستدعاة (من ملف JSON الخارجي)</h3>
+    <table id="dictionaryTable">
+        <thead>
+            <tr>
+                <th>الكلمة العراقية</th>
+                <th>البديل الصوتي للـ AI</th>
+                <th>الإجراءات</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- يتم جلبها وعرضها أوتوماتيكياً -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // مصفوفة تخزين البيانات المؤقتة داخل الصفحة بعد جلبها
+    let basrawiJSONDatabase = [];
+
+    // رابط ملف الجيسون الخارجي (هنا تخلّي رابط Raw من جيت هاب بعد ما ترفعه)
+    const jsonApiUrl = 'dict.json'; 
+
+    // دالة سحب البيانات باستخدام Fetch API
+    async function loadDictionaryFromAPI() {
+        try {
+            let response = await fetch(jsonApiUrl);
+            if (!response.ok) throw new Error("فشل في جلب البيانات");
+            basrawiJSONDatabase = await response.json();
+            updateTable();
+            console.log("تم سحب القاموس بنجاح عبر الـ Fetch!");
+        } catch (error) {
+            console.error("خطأ في الاتصال بالملف الخارجي:", error);
+            alert("تعذر تحميل القاموس الخارجي، تأكد من مسار الملف.");
+        }
+    }
+
+    // تحديث الجدول وعرض الكلمات
+    function updateTable() {
+        let tbody = document.querySelector("#dictionaryTable tbody");
+        tbody.innerHTML = "";
+        
+        basrawiJSONDatabase.forEach((item, index) => {
+            let row = `<tr>
+                <td>${item.iraqi}</td>
+                <td>${item.phonetic}</td>
+                <td>
+                    <button class="btn-edit" onclick="editWord(${index})">تعديل</button>
+                    <button class="btn-danger" onclick="deleteWord(${index})">حذف</button>
+                </td>
+            </tr>`;
+            tbody.innerHTML += row;
+        });
+    }
+
+    // إضافة كلمة جديدة
+    function addWordToDatabase() {
+        let iraqi = document.getElementById("iraqiWord").value.trim();
+        let phonetic = document.getElementById("phoneticWord").value.trim();
+        
+        if (iraqi && phonetic) {
+            let existingIndex = basrawiJSONDatabase.findIndex(item => item.iraqi === iraqi);
+            if (existingIndex !== -1) {
+                basrawiJSONDatabase[existingIndex].phonetic = phonetic;
+            } else {
+                basrawiJSONDatabase.push({ "iraqi": iraqi, "phonetic": phonetic });
+            }
+
+            document.getElementById("iraqiWord").value = "";
+            document.getElementById("phoneticWord").value = "";
+            updateTable();
+            alert("تمت الإضافة بنجاح! (تأكد من تحديث ملف الـ JSON عندك بالنسخة الجديدة عند الرفع).");
+        } else {
+            alert("يرجى ملء الحقلين.");
+        }
+    }
+
+    function editWord(index) {
+        let item = basrawiJSONDatabase[index];
+        document.getElementById("iraqiWord").value = item.iraqi;
+        document.getElementById("phoneticWord").value = item.phonetic;
+        basrawiJSONDatabase.splice(index, 1);
+        updateTable();
+    }
+
+    function deleteWord(index) {
+        if (confirm("هل أنت متأكد من حذف هذه الكلمة؟")) {
+            basrawiJSONDatabase.splice(index, 1);
+            updateTable();
+        }
+    }
+
+    // معالجة النصوص واختبارها
+    function convertText() {
+        let text = document.getElementById("inputText").value;
+        let processedText = text;
+
+        basrawiJSONDatabase.forEach(item => {
+            let regex = new RegExp(item.iraqi, "g");
+            processedText = processedText.replace(regex, `[${item.phonetic}]`);
+        });
+
+        document.getElementById("resultOutput").innerHTML = "<strong>النص الموجه للذكاء الاصطناعي (Fitch IBI):</strong><br>" + processedText;
+    }
+
+    // تشغيل الجلب أول ما تفتح الصفحة
+    loadDictionaryFromAPI();
+</script>
+
+</body>
+</html>
