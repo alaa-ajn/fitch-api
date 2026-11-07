@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>اختبار Fitch API - القاموس البصراوي</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #12121c;
+            color: #f0f0f5;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1e1e2d;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+        h2 { color: #00d2ff; text-align: center; }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #44445c;
+            padding: 12px;
+            text-align: center;
+        }
+        th { background: #2a2a3d; color: #00d2ff; }
+        .status {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #ff9f43;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>اختبار الاتصال بـ Fitch API</h2>
+    <div id="status" class="status">جاري الاتصال وسحب البيانات...</div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>الكلمة العراقية (Iraqi)</th>
+                <th>الضبط الصوتي (Phonetic)</th>
+            </tr>
+        </thead>
+        <tbody id="dictTableBody">
+            <!-- البيانات راح تنزل هنا تلقائياً عن طريق الفيتش -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // رابط الـ Raw الخاص بملف الـ JSON على جيت هاب
+    const jsonApiUrl = 'https://raw.githubusercontent.com/alaa-ajn/fitch-api/refs/heads/main/dict.json';
+
+    async function testFetchAPI() {
+        const statusDiv = document.getElementById("status");
+        const tableBody = document.getElementById("dictTableBody");
+
+        try {
+            statusDiv.textContent = "جاري جلب البيانات من GitHub...";
+            
+            let response = await fetch(jsonApiUrl);
+            if (!response.ok) throw new Error("فشل الاتصال بالملف الخارجي");
+
+            let data = await response.json();
+            
+            // تفريغ الجدول قبل عرض البيانات
+            tableBody.innerHTML = "";
+
+            // تعبئة الجدول بالكلمات المستخرجة
+            data.forEach(item => {
+                let row = `<tr>
+                    <td>${item.iraqi}</td>
+                    <td>${item.phonetic}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+
+            statusDiv.textContent = "تم سحب القاموس بنجاح عبر الـ Fetch! 🎉";
+            statusDiv.style.color = "#2ed573";
+            console.log("تم سحب القاموس بنجاح عبر الـ Fetch!");
+
+        } catch (error) {
+            console.error("خطأ في الاتصال:", error);
+            statusDiv.textContent = "حدث خطأ أثناء جلب البيانات، تأكد من الرابط.";
+            statusDiv.style.color = "#ff4757";
+        }
+    }
+
+    // تشغيل الدالة مباشرة عند فتح الصفحة
+    testFetchAPI();
+</script>
+
+</body>
+</html>
