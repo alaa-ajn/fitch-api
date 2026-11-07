@@ -1,102 +1,402 @@
 [
-  {"iraqi": "جيب", "phonetic": "geeb"},
-  {"iraqi": "چاي", "phonetic": "chay"},
-  {"iraqi": "گمر", "phonetic": "gamar"},
-  {"iraqi": "گيمر", "phonetic": "gaimar"},
-  {"iraqi": "جبل", "phonetic": "jabal"},
-  {"iraqi": "چبير", "phonetic": "chbeer"},
-  {"iraqi": "جوعان", "phonetic": "jo'an"},
-  {"iraqi": "چف", "phonetic": "chaf"},
-  {"iraqi": "جرح", "phonetic": "jarh"},
-  {"iraqi": "چم", "phonetic": "cham"},
-  {"iraqi": "گاع", "phonetic": "ga'a"},
-  {"iraqi": "گال", "phonetic": "gal"},
-  {"iraqi": "گعد", "phonetic": "ga'ad"},
-  {"iraqi": "گلب", "phonetic": "galb"},
-  {"iraqi": "گص", "phonetic": "gas"},
-  {"iraqi": "جيران", "phonetic": "jiran"},
-  {"iraqi": "جيس", "phonetic": "jees"},
-  {"iraqi": "چكليت", "phonetic": "choklet"},
-  {"iraqi": "چنطة", "phonetic": "chanta"},
-  {"iraqi": "جام", "phonetic": "jam"},
-  {"iraqi": "قوري", "phonetic": "gori"},
-  {"iraqi": "قوطية", "phonetic": "gotia"},
-  {"iraqi": "قنفة", "phonetic": "ganfa"},
-  {"iraqi": "قاط", "phonetic": "gat"},
-  {"iraqi": "قايش", "phonetic": "gayish"},
-  {"iraqi": "جنجون", "phonetic": "janjoon"},
-  {"iraqi": "چلب", "phonetic": "chlab"},
-  {"iraqi": "چماشة", "phonetic": "chmasha"},
-  {"iraqi": "چطل", "phonetic": "chatal"},
-  {"iraqi": "چكرا", "phonetic": "chakra"},
-  {"iraqi": "جفص", "phonetic": "jafas"},
-  {"iraqi": "جطل", "phonetic": "jatal"},
-  {"iraqi": "جفّر", "phonetic": "jaffar"},
-  {"iraqi": "جلوة", "phonetic": "jalwa"},
-  {"iraqi": "جقلي", "phonetic": "jaqali"},
-  {"iraqi": "گزاز", "phonetic": "gzaz"},
-  {"iraqi": "گروه", "phonetic": "garoh"},
-  {"iraqi": "گطو", "phonetic": "gato"},
-  {"iraqi": "گماش", "phonetic": "gamash"},
-  {"iraqi": "گوريه", "phonetic": "gouriya"},
-  {"iraqi": "گواچي", "phonetic": "gwachi"},
-  {"iraqi": "گصص", "phonetic": "gasas"},
-  {"iraqi": "گليبي", "phonetic": "gleebi"},
-  {"iraqi": "گري", "phonetic": "gari"},
-  {"iraqi": "گوگل", "phonetic": "google"},
-  {"iraqi": "قفل", "phonetic": "qufl"},
-  {"iraqi": "قلب", "phonetic": "qalb"},
-  {"iraqi": "قلم", "phonetic": "qalam"},
-  {"iraqi": "قصة", "phonetic": "qissa"},
-  {"iraqi": "قشمري", "phonetic": "gashmari"},
-  {"iraqi": "قندرة", "phonetic": "gandara"},
-  {"iraqi": "قالب", "phonetic": "galib"},
-  {"iraqi": "قشمر", "phonetic": "gashamar"},
-  {"iraqi": "قوزي", "phonetic": "gozi"},
-  {"iraqi": "قاطين", "phonetic": "gateen"},
-  {"iraqi": "جواز", "phonetic": "jawaz"},
-  {"iraqi": "جسر", "phonetic": "jasar"},
-  {"iraqi": "جهال", "phonetic": "jhal"},
-  {"iraqi": "چراغ", "phonetic": "charagh"},
-  {"iraqi": "چالم", "phonetic": "chalm"},
-  {"iraqi": "چاووش", "phonetic": "chawoush"},
-  {"iraqi": "چوخلة", "phonetic": "chokhla"},
-  {"iraqi": "چفت", "phonetic": "chaft"},
-  {"iraqi": "چولي", "phonetic": "choli"},
-  {"iraqi": "چايچي", "phonetic": "chaychi"},
-  {"iraqi": "جمال", "phonetic": "jamal"},
-  {"iraqi": "جوانح", "phonetic": "jwanih"},
-  {"iraqi": "جيش", "phonetic": "jeesh"},
-  {"iraqi": "جرائد", "phonetic": "jara'id"},
-  {"iraqi": "جداول", "phonetic": "jadawil"},
-  {"iraqi": "گراش", "phonetic": "garash"},
-  {"iraqi": "گصيصة", "phonetic": "gseesa"},
-  {"iraqi": "گطعة", "phonetic": "gat'a"},
-  {"iraqi": "گوطة", "phonetic": "gota"},
-  {"iraqi": "گوباية", "phonetic": "gobaya"},
-  {"iraqi": "گاعي", "phonetic": "ga'ee"},
-  {"iraqi": "گديم", "phonetic": "gdeem"},
-  {"iraqi": "گريب", "phonetic": "greeb"},
-  {"iraqi": "گلي", "phonetic": "gali"},
-  {"iraqi": "گلاچي", "phonetic": "glachi"},
-  {"iraqi": "قصر", "phonetic": "qasr"},
-  {"iraqi": "قطعة", "phonetic": "qit'a"},
-  {"iraqi": "قانون", "phonetic": "qanoon"},
-  {"iraqi": "قيمر", "phonetic": "qaymar"},
-  {"iraqi": "قواطع", "phonetic": "gawati'"},
-  {"iraqi": "قندلفت", "phonetic": "gandlafat"},
-  {"iraqi": "قلس", "phonetic": "galas"},
-  {"iraqi": "قنطرة", "phonetic": "gantara"},
-  {"iraqi": "قزح", "phonetic": "qazah"},
-  {"iraqi": "قلاع", "phonetic": "qila'"},
-  {"iraqi": "جفّ", "phonetic": "jaf"},
-  {"iraqi": "چفچير", "phonetic": "chafcheer"},
-  {"iraqi": "چارجر", "phonetic": "charger"},
-  {"iraqi": "گلاس", "phonetic": "glas"},
-  {"iraqi": "گاون", "phonetic": "gawon"},
-  {"iraqi": "گراج", "phonetic": "garaj"},
-  {"iraqi": "گاز", "phonetic": "gaz"},
-  {"iraqi": "قاطور", "phonetic": "gatour"},
-  {"iraqi": "قير", "phonetic": "gear"},
-  {"iraqi": "چاكوك", "phonetic": "chakook"}
+  {
+    "iraqi": "شاي",
+    "phonetic": "chay"
+  },
+  {
+    "iraqi": "جاي",
+    "phonetic": "chay"
+  },
+  {
+    "iraqi": "جيب",
+    "phonetic": "geeb"
+  },
+  {
+    "iraqi": "اريد",
+    "phonetic": "areed"
+  },
+  {
+    "iraqi": "شلونك",
+    "phonetic": "shlonak"
+  },
+  {
+    "iraqi": "شكو",
+    "phonetic": "shaku"
+  },
+  {
+    "iraqi": "ماكو",
+    "phonetic": "maku"
+  },
+  {
+    "iraqi": "هيجي",
+    "phonetic": "heji"
+  },
+  {
+    "iraqi": "ترة",
+    "phonetic": "tra"
+  },
+  {
+    "iraqi": "هسة",
+    "phonetic": "hassa"
+  },
+  {
+    "iraqi": "باجر",
+    "phonetic": "bajir"
+  },
+  {
+    "iraqi": "امس",
+    "phonetic": "ams"
+  },
+  {
+    "iraqi": "خوش",
+    "phonetic": "khosh"
+  },
+  {
+    "iraqi": "عاشت ايدك",
+    "phonetic": "ashat eedak"
+  },
+  {
+    "iraqi": "تدلل",
+    "phonetic": "tadallal"
+  },
+  {
+    "iraqi": "زين",
+    "phonetic": "zain"
+  },
+  {
+    "iraqi": "حلو",
+    "phonetic": "helw"
+  },
+  {
+    "iraqi": "مهيل",
+    "phonetic": "maheel"
+  },
+  {
+    "iraqi": "گول",
+    "phonetic": "gol"
+  },
+  {
+    "iraqi": "احجي",
+    "phonetic": "ehji"
+  },
+  {
+    "iraqi": "شلون",
+    "phonetic": "shlon"
+  },
+  {
+    "iraqi": "وين",
+    "phonetic": "wain"
+  },
+  {
+    "iraqi": "ليش",
+    "phonetic": "laysh"
+  },
+  {
+    "iraqi": "شنو",
+    "phonetic": "shnu"
+  },
+  {
+    "iraqi": "منو",
+    "phonetic": "mnu"
+  },
+  {
+    "iraqi": "هذا",
+    "phonetic": "hatha"
+  },
+  {
+    "iraqi": "هاي",
+    "phonetic": "hay"
+  },
+  {
+    "iraqi": "ذني",
+    "phonetic": "thani"
+  },
+  {
+    "iraqi": "هذولي",
+    "phonetic": "hthooli"
+  },
+  {
+    "iraqi": "هناك",
+    "phonetic": "hunak"
+  },
+  {
+    "iraqi": "هنا",
+    "phonetic": "hina"
+  },
+  {
+    "iraqi": "فوگ",
+    "phonetic": "fog"
+  },
+  {
+    "iraqi": "جوگ",
+    "phonetic": "jowg"
+  },
+  {
+    "iraqi": "جوه",
+    "phonetic": "joh"
+  },
+  {
+    "iraqi": "برة",
+    "phonetic": "barra"
+  },
+  {
+    "iraqi": "جو",
+    "phonetic": "jaw"
+  },
+  {
+    "iraqi": "ليل",
+    "phonetic": "leel"
+  },
+  {
+    "iraqi": "نهار",
+    "phonetic": "nahar"
+  },
+  {
+    "iraqi": "شمس",
+    "phonetic": "shams"
+  },
+  {
+    "iraqi": "گمر",
+    "phonetic": "gamar"
+  },
+  {
+    "iraqi": "سما",
+    "phonetic": "sama"
+  },
+  {
+    "iraqi": "گاع",
+    "phonetic": "gaa"
+  },
+  {
+    "iraqi": "ماي",
+    "phonetic": "may"
+  },
+  {
+    "iraqi": "نهر",
+    "phonetic": "nahar"
+  },
+  {
+    "iraqi": "شط",
+    "phonetic": "shatt"
+  },
+  {
+    "iraqi": "سفينة",
+    "phonetic": "safeena"
+  },
+  {
+    "iraqi": "عشگ",
+    "phonetic": "ushg"
+  },
+  {
+    "iraqi": "حب",
+    "phonetic": "hub"
+  },
+  {
+    "iraqi": "گلب",
+    "phonetic": "galb"
+  },
+  {
+    "iraqi": "روح",
+    "phonetic": "rooh"
+  },
+  {
+    "iraqi": "عمر",
+    "phonetic": "omar"
+  },
+  {
+    "iraqi": "عين",
+    "phonetic": "ain"
+  },
+  {
+    "iraqi": "راحت",
+    "phonetic": "rahat"
+  },
+  {
+    "iraqi": "اجيت",
+    "phonetic": "ajeet"
+  },
+  {
+    "iraqi": "رحت",
+    "phonetic": "rahat"
+  },
+  {
+    "iraqi": "صعدت",
+    "phonetic": "saadart"
+  },
+  {
+    "iraqi": "نزلت",
+    "phonetic": "nazalt"
+  },
+  {
+    "iraqi": "گعدت",
+    "phonetic": "gaadt"
+  },
+  {
+    "iraqi": "وگفت",
+    "phonetic": "wagaft"
+  },
+  {
+    "iraqi": "مشيت",
+    "phonetic": "masheet"
+  },
+  {
+    "iraqi": "ركضت",
+    "phonetic": "rakdhat"
+  },
+  {
+    "iraqi": "سولفت",
+    "phonetic": "sawlaft"
+  },
+  {
+    "iraqi": "حچيت",
+    "phonetic": "hajeet"
+  },
+  {
+    "iraqi": "سمعت",
+    "phonetic": "samiat"
+  },
+  {
+    "iraqi": "شفت",
+    "phonetic": "shaft"
+  },
+  {
+    "iraqi": "عرفت",
+    "phonetic": "araft"
+  },
+  {
+    "iraqi": "فهمت",
+    "phonetic": "fahamt"
+  },
+  {
+    "iraqi": "نسيت",
+    "phonetic": "naseet"
+  },
+  {
+    "iraqi": "تذكرت",
+    "phonetic": "tathakart"
+  },
+  {
+    "iraqi": "كلت",
+    "phonetic": "galt"
+  },
+  {
+    "iraqi": "گلت",
+    "phonetic": "galt"
+  },
+  {
+    "iraqi": "سألتي",
+    "phonetic": "saalt"
+  },
+  {
+    "iraqi": "جاوبت",
+    "phonetic": "jawabt"
+  },
+  {
+    "iraqi": "ضحكت",
+    "phonetic": "dahakt"
+  },
+  {
+    "iraqi": "بچيت",
+    "phonetic": "bajeet"
+  },
+  {
+    "iraqi": "زعلت",
+    "phonetic": "zaalat"
+  },
+  {
+    "iraqi": "رضيت",
+    "phonetic": "radeet"
+  },
+  {
+    "iraqi": "تعبت",
+    "phonetic": "taabat"
+  },
+  {
+    "iraqi": "رتحت",
+    "phonetic": "irtaht"
+  },
+  {
+    "iraqi": "كافي",
+    "phonetic": "kafi"
+  },
+  {
+    "iraqi": "خلص",
+    "phonetic": "خلص"
+  },
+  {
+    "iraqi": "بعدين",
+    "phonetic": "baadeen"
+  },
+  {
+    "iraqi": "دائماً",
+    "phonetic": "dayman"
+  },
+  {
+    "iraqi": "أبداً",
+    "phonetic": "abdan"
+  },
+  {
+    "iraqi": "صدگ",
+    "phonetic": "siddig"
+  },
+  {
+    "iraqi": "جذب",
+    "phonetic": "jithb"
+  },
+  {
+    "iraqi": "صحيح",
+    "phonetic": "saheeh"
+  },
+  {
+    "iraqi": "خطأ",
+    "phonetic": "khata"
+  },
+  {
+    "iraqi": "زين",
+    "phonetic": "zain"
+  },
+  {
+    "iraqi": "مو زين",
+    "phonetic": "mo zain"
+  },
+  {
+    "iraqi": "عالي",
+    "phonetic": "ali"
+  },
+  {
+    "iraqi": "صخام",
+    "phonetic": "skham"
+  },
+  {
+    "iraqi": "بلاوي",
+    "phonetic": "balawi"
+  },
+  {
+    "iraqi": "سالفة",
+    "phonetic": "salfa"
+  },
+  {
+    "iraqi": "حچي",
+    "phonetic": "haji"
+  },
+  {
+    "iraqi": "كلمة",
+    "phonetic": "kalma"
+  },
+  {
+    "iraqi": "معجم",
+    "phonetic": "mu'jam"
+  },
+  {
+    "iraqi": "قاموس",
+    "phonetic": "qamoos"
+  },
+  {
+    "iraqi": "صوت",
+    "phonetic": "sout"
+  },
+  {
+    "iraqi": "ميكروفون",
+    "phonetic": "microphone"
+  }
 ]
